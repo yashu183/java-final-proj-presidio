@@ -7,6 +7,7 @@
     pageEncoding="ISO-8859-1"%>
 <%@page import="com.controller.*" %>
 <%@page import="org.hibernate.SessionFactory" %>
+<%@page import = "com.dao.*" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -118,7 +119,7 @@
   		}
        }
        
-       if(httpsession.getAttribute("uid") == null){	
+/*        if(httpsession.getAttribute("uid") == null){	
 			//response.sendRedirect("/needLogin");
        }
        else{
@@ -131,7 +132,18 @@
 	   		Query query = sessionq.createQuery("from User usr where usr.getUid() = "+uid, User.class);
 	   		User usr = (User)query.list().get(0);
 	   		System.out.println(usr.getUname());
-       }       
+       }  */   
+        UserListImpl userlist = new UserListImpl();
+       int uid = (int)httpsession.getAttribute("uid");
+       User usr = userlist.findById(uid); 
+/*        LoginController logincontroller = new LoginController();
+       SessionFactory sessionfactory = logincontroller.getSessionfactory();
+  		Session sessionq = sessionfactory.getCurrentSession();
+  		int uid = (int)httpsession.getAttribute("uid");
+  		Query query = sessionq.createQuery("from User usr where usr.getUid() = "+uid, User.class);
+  		User usr = (User)query.list().get(0);
+  		System.out.println(usr.getUname()); */
+       System.out.println(usr.getUname());
       %>
       </ul>
       <ul style="float : right;" class="navbar-nav">
