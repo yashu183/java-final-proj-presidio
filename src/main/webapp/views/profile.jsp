@@ -118,32 +118,6 @@
   	      	out.print("</li>");
   		}
        }
-       
-/*        if(httpsession.getAttribute("uid") == null){	
-			//response.sendRedirect("/needLogin");
-       }
-       else{
-    	   int uid = (int)httpsession.getAttribute("uid");
-	   		vegeShop fruitshop = new vegeShop();
-	   		SessionFactory sessionfactory = fruitshop.getSessionFactory();
-	   		//@Autowired
-	   		//SessionFactory sessionfactory;
-	   		Session sessionq = sessionfactory.getCurrentSession();
-	   		Query query = sessionq.createQuery("from User usr where usr.getUid() = "+uid, User.class);
-	   		User usr = (User)query.list().get(0);
-	   		System.out.println(usr.getUname());
-       }  */   
-        UserListImpl userlist = new UserListImpl();
-       int uid = (int)httpsession.getAttribute("uid");
-       User usr = userlist.findById(uid); 
-/*        LoginController logincontroller = new LoginController();
-       SessionFactory sessionfactory = logincontroller.getSessionfactory();
-  		Session sessionq = sessionfactory.getCurrentSession();
-  		int uid = (int)httpsession.getAttribute("uid");
-  		Query query = sessionq.createQuery("from User usr where usr.getUid() = "+uid, User.class);
-  		User usr = (User)query.list().get(0);
-  		System.out.println(usr.getUname()); */
-       System.out.println(usr.getUname());
       %>
       </ul>
       <ul style="float : right;" class="navbar-nav">
@@ -163,120 +137,170 @@
   </div>
 </nav>
 	
-	<div class = "mt-3 container border border-round shadow">
-		<div class="main-body">
-          <div class="row gutters-sm">
-            <div class="col-md-4 mb-3">
-              <div class="card">
-                <div class="card-body">
-                  <div class="d-flex flex-column align-items-center text-center">
-                    <img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="rounded-circle" width="150">
-                    <div class="mt-3">
-                      <h4>User Name</h4>
-                      <p class="text-muted font-size-sm">Address Here</p>
-                      <button class="btn btn-dark btn-block">Edit Profile</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="card mt-3">
-                <ul class="list-group list-group-flush">
-                  <li class="list-group-item d-flex align-items-center flex-wrap">
-                    <i style= "font-size: 26px; color : #2d88ff; margin-right : 0.5rem;" class="fas fa-globe"></i><h6 class="mb-0">Website</h6>
-                    <span style = "float : right; margin-left : auto;" class="text-secondary">bootdey</span>
-                  </li>
-                  <li class="list-group-item d-flex align-items-center flex-wrap">
-                    <i style= "font-size: 26px; margin-right : 0.5rem;" class="fab fa-github-square"></i><h6 class="mb-0">Github</h6>
-                    <span style = "float : right; margin-left : auto;" class="text-secondary">bootdey</span>
-                  </li>
-                  <li class="list-group-item d-flex align-items-center flex-wrap">
-                    <i style= "font-size: 26px; color : #00aced; margin-right : 0.5rem;" class="fab fa-twitter-square"></i><h6 class="mb-0">Twitter</h6>
-                    <span style = "float : right; margin-left : auto;" class="text-secondary">bootdey</span>
-                  </li>
-                  <li class="list-group-item d-flex align-items-center flex-wrap">
-                    <i style= "font-size: 26px; color : #E1306C; margin-right : 0.5rem;" class="fab fa-instagram-square"></i><h6 class="mb-0">Instagram</h6>
-                    <span style = "float : right; margin-left : auto;" class="text-secondary">bootdey</span>
-                  </li>
-                  <li class="list-group-item d-flex align-items-center flex-wrap">
-                    <i style= "font-size: 26px; color : #2d88ff; margin-right : 0.5rem;" class="fab fa-facebook-square"></i><h6 class="mb-0">Facebook</h6>
-                    <span style = "float : right; margin-left : auto;" class="text-secondary">bootdey</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="col-md-8">
-              <div class="card mb-3">
-                <div class="card-body">
-                  <div class="row">
-                    <div class="col-sm-3">
-                      <h6 class="mb-0">Full Name</h6>
-                    </div>
-                    <div class="col-sm-9 text-secondary">
+<div class = "mt-3 container border border-round shadow">
+	<div class="main-body">
+         <div class="row gutters-sm">
+           <div class="col-md-4 mb-3">
+             <div class="card">
+               <div class="card-body">
+                 <div class="d-flex flex-column align-items-center text-center">
+                   <img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="rounded-circle" width="150">
+                   <div class="mt-3">
+                     
+                     <% if(httpsession.getAttribute("userDetails") != null){
+	                     User usr = (User)httpsession.getAttribute("userDetails");
+	                     String uname = usr.getUname();
+	                     String add = usr.getAddress();
+	                     String status = usr.getIsAdmin() == 1 ? "Admin" : "Not Admin";
+                     	out.println("<h4>"+uname+"</h4>");
+                     	out.println("<p class = 'text-muted font-size-sm'>"+add+"</p>");
+                     }
+                     %>
+                     <!-- <p class="text-muted font-size-sm">Address Here</p> -->
+                     <button class="btn btn-dark btn-block">Edit Profile</button>
+                   </div>
+                 </div>
+               </div>
+             </div>
+             <div class="card mt-3">
+               <ul class="list-group list-group-flush">
+                 <li class="list-group-item d-flex align-items-center flex-wrap">
+                   <i style= "font-size: 26px; color : #2d88ff; margin-right : 0.5rem;" class="fas fa-globe"></i><h6 class="mb-0">Website</h6>
+                   <span style = "float : right; margin-left : auto;" class="text-secondary">bootdey</span>
+                 </li>
+                 <li class="list-group-item d-flex align-items-center flex-wrap">
+                   <i style= "font-size: 26px; margin-right : 0.5rem;" class="fab fa-github-square"></i><h6 class="mb-0">Github</h6>
+                   <span style = "float : right; margin-left : auto;" class="text-secondary">bootdey</span>
+                 </li>
+                 <li class="list-group-item d-flex align-items-center flex-wrap">
+                   <i style= "font-size: 26px; color : #00aced; margin-right : 0.5rem;" class="fab fa-twitter-square"></i><h6 class="mb-0">Twitter</h6>
+                   <span style = "float : right; margin-left : auto;" class="text-secondary">bootdey</span>
+                 </li>
+                 <li class="list-group-item d-flex align-items-center flex-wrap">
+                   <i style= "font-size: 26px; color : #E1306C; margin-right : 0.5rem;" class="fab fa-instagram-square"></i><h6 class="mb-0">Instagram</h6>
+                   <span style = "float : right; margin-left : auto;" class="text-secondary">bootdey</span>
+                 </li>
+                 <li class="list-group-item d-flex align-items-center flex-wrap">
+                   <i style= "font-size: 26px; color : #2d88ff; margin-right : 0.5rem;" class="fab fa-facebook-square"></i><h6 class="mb-0">Facebook</h6>
+                   <span style = "float : right; margin-left : auto;" class="text-secondary">bootdey</span>
+                 </li>
+               </ul>
+             </div>
+           </div>
+           <div class="col-md-8">
+             <div class="card mb-3">
+               <div class="card-body">
+                 <div class="row">
+                   <div class="col-sm-3">
+                     <h6 class="mb-0">User Name</h6>
+                   </div>
+<!--                     <div class="col-sm-9 text-secondary">
                       Kenneth Valdez
-                    </div>
-                  </div>
-                  <hr>
-                  <div class="row">
-                    <div class="col-sm-3">
-                      <h6 class="mb-0">Email</h6>
-                    </div>
-                    <div class="col-sm-9 text-secondary">
+                    </div> -->
+                  <%if(httpsession.getAttribute("userDetails") != null){
+                  	User usr1 = (User)httpsession.getAttribute("userDetails");
+                  	String uname1 = usr1.getUname();
+                  	out.println("<div class='col-sm-9 text-secondary'>"+uname1+"</div>"); 
+                  }
+                  %>
+                 </div>
+                 <hr>
+                 <div class="row">
+                   <div class="col-sm-3">
+                     <h6 class="mb-0">Email</h6>
+                   </div>
+<!--                     <div class="col-sm-9 text-secondary">
                       fip@jukmuh.al
-                    </div>
-                  </div>
-                  <hr>
-                  <div class="row">
-                    <div class="col-sm-3">
-                      <h6 class="mb-0">Phone</h6>
-                    </div>
-                    <div class="col-sm-9 text-secondary">
+                    </div> -->
+                  <%if(httpsession.getAttribute("userDetails") != null){
+                  	User usr2 = (User)httpsession.getAttribute("userDetails");
+                  	String email = usr2.getEmail();
+                  	out.println("<div class='col-sm-9 text-secondary'>"+email+"</div>");
+                  }
+                  %>
+                    <%-- <%= out.println("<div class='col-sm-9 text-secondary>"+email+"</div>") %> --%>
+                 </div>
+                 <hr>
+                 <div class="row">
+                   <div class="col-sm-3">
+                     <h6 class="mb-0">Phone</h6>
+                   </div>
+<!--                     <div class="col-sm-9 text-secondary">
                       (239) 816-9029
-                    </div>
-                  </div>
-                  <hr>
-                  <div class="row">
-                    <div class="col-sm-3">
-                      <h6 class="mb-0">Address</h6>
-                    </div>
-                    <div class="col-sm-9 text-secondary">
-                      Bay Area, San Francisco, CA
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row gutters-sm">
-                <div class="col-sm-12 mb-3">
-                  <div class="card h-100">
-                    <div class="card-body">
-                      <h6 class="d-flex align-items-center mb-3">Shopping History</h6>
-                      <small>Web Design</small>
-                      <div class="progress mb-3" style="height: 5px">
-                        <div class="progress-bar bg-dark" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-                      <small>Website Markup</small>
-                      <div class="progress mb-3" style="height: 5px">
-                        <div class="progress-bar bg-dark" role="progressbar" style="width: 72%" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-                      <small>One Page</small>
-                      <div class="progress mb-3" style="height: 5px">
-                        <div class="progress-bar bg-dark" role="progressbar" style="width: 89%" aria-valuenow="89" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-                      <small>Mobile Template</small>
-                      <div class="progress mb-3" style="height: 5px">
-                        <div class="progress-bar bg-dark" role="progressbar" style="width: 55%" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-                      <small>Backend API</small>
-                      <div class="progress mb-3" style="height: 5px">
-                        <div class="progress-bar bg-dark " role="progressbar" style="width: 66%" aria-valuenow="66" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-	</div>
+                    </div> -->
+                  <%if(httpsession.getAttribute("userDetails") != null){
+                  	User usr3 = (User)httpsession.getAttribute("userDetails");
+                  	String ph = usr3.getPhone();
+                  	out.println("<div class='col-sm-9 text-secondary'>"+ph+"</div>");
+                  }
+                  %>
+                   <%--  <%= out.println("<div class='col-sm-9 text-secondary>"+ph+"</div>") %> --%>
+                 </div>
+                 <hr>
+                 <div class="row">
+                   <div class="col-sm-3">
+                     <h6 class="mb-0">Address</h6>
+                   </div>
+<!--                    <div class="col-sm-9 text-secondary">
+                     Address Here
+                   </div> -->
+                  <%if(httpsession.getAttribute("userDetails") != null){
+                  	User usr4 = (User)httpsession.getAttribute("userDetails");
+                  	String address = usr4.getAddress();
+                  	out.println("<div class='col-sm-9 text-secondary'>"+address+"</div>");
+                  }
+                  %>
+                 </div>
+                 <hr>
+                 <div class="row">
+                   <div class="col-sm-3">
+                     <h6 class="mb-0">Admin Status</h6>
+                   </div>
+<!--                    <div class="col-sm-9 text-secondary">
+                     Address Here
+                   </div> -->
+                  <%if(httpsession.getAttribute("userDetails") != null){
+                  	User usr5 = (User)httpsession.getAttribute("userDetails");
+                  	 String status = usr5.getIsAdmin() == 1 ? "Admin" : "Not Admin";
+                  	out.println("<div class='col-sm-9 text-secondary'>"+status+"</div>");
+                  }
+                  %>
+                 </div>
+               </div>
+             </div>
+             <div class="row gutters-sm">
+               <div class="col-sm-12 mb-3">
+                 <div class="card h-100">
+                   <div class="card-body">
+                     <h6 class="d-flex align-items-center mb-3">Shopping History</h6>
+                     <small>Web Design</small>
+                     <div class="progress mb-3" style="height: 5px">
+                       <div class="progress-bar bg-dark" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                     </div>
+                     <small>Website Markup</small>
+                     <div class="progress mb-3" style="height: 5px">
+                       <div class="progress-bar bg-dark" role="progressbar" style="width: 72%" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100"></div>
+                     </div>
+                     <small>One Page</small>
+                     <div class="progress mb-3" style="height: 5px">
+                       <div class="progress-bar bg-dark" role="progressbar" style="width: 89%" aria-valuenow="89" aria-valuemin="0" aria-valuemax="100"></div>
+                     </div>
+                     <small>Mobile Template</small>
+                     <div class="progress mb-3" style="height: 5px">
+                       <div class="progress-bar bg-dark" role="progressbar" style="width: 55%" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
+                     </div>
+                     <small>Backend API</small>
+                     <div class="progress mb-3" style="height: 5px">
+                       <div class="progress-bar bg-dark " role="progressbar" style="width: 66%" aria-valuenow="66" aria-valuemin="0" aria-valuemax="100"></div>
+                     </div>
+                   </div>
+                 </div>
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
+</div>
 </body>
 <script src="https://kit.fontawesome.com/8e81d008db.js" crossorigin="anonymous"></script>
 </html>

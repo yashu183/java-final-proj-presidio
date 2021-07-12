@@ -5,6 +5,14 @@ public class RegisterForm {
 	private String upass;
 	private String uname;
 	private String phnum;
+	private String address;
+	
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
 	public String getEmail() {
 		return email;
 	}

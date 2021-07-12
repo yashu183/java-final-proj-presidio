@@ -14,24 +14,29 @@
 		<form method = "post" action = "/registerAction" commandName = "registerBean" class="mt-2 w-40">
 		    <div class="form-group">
 		        <label for="name">Username</label><br>
-		        <input class="form-control" type="text" id="name" name = "uname" placeholder="Enter name">
+		        <input class="form-control" type="text" id="name" name = "uname" placeholder="Enter name" required>
 		    </div>
 			<br>
 		    <div class="form-group">
 		        <label for="email">Email</label><br>
-		        <input class="form-control" type="email" id="email" name = "email" placeholder="Enter your email">
+		        <input class="form-control" type="email" id="email" name = "email" placeholder="Enter your email" required>
 		    </div>
 		    <br>
 		    
 		    <div class="form-group">
 		        <label for="password">Password</label><br>
-		        <input class="form-control" type="password" id="password" name = "upass" placeholder="Enter Password">
+		        <input class="form-control" type="password" id="password" name = "upass" placeholder="Enter Password" required>
 		    </div>
 		    <br>
 		    
 		    <div class="form-group">
 		        <label for="phone">Phone Number</label><br>
-		        <input class="form-control" type="text" id="phone" name = "phnum" placeholder="Enter your phone number with country code">
+		        <input class="form-control" type="text" id="phone" name = "phnum" placeholder="Enter your phone number with country code" required>
+		    </div>
+		    <br>
+		    <div class="form-group">
+		        <label for="address">Address</label><br>
+		        <input class="form-control" type="text" id="address" name = "address" placeholder="Enter your Address" required>
 		    </div>
 		    <br>
 		    <input class="btn w-100" style="background-color : #3d3d3d; color : #c9d1d9" type="submit" value = "Register"/>

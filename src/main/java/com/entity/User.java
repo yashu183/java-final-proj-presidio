@@ -16,6 +16,13 @@ public class User {
 	private int uid;
 	private String email;
 	private int isAdmin;
+	private String address;
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
 	public int getIsAdmin() {
 		return isAdmin;
 	}

@@ -40,6 +40,7 @@ public class RegisterController {
 		String upass = registerform.getUpass();
 		String phnum = registerform.getPhnum();
 		String email = registerform.getEmail();
+		String address = registerform.getAddress();
 		User user = new User();
 		user.setEmail(email);
 		user.setPhone(phnum);
@@ -47,6 +48,7 @@ public class RegisterController {
 		user.setUpass(upass);
 		user.setFlag(0);
 		user.setIsAdmin(0); 
+		user.setAddress(address);
     	Session session = sessionfactory.getCurrentSession();
     	session.persist(user);
     	mandv.setViewName("index");

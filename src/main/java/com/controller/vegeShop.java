@@ -11,6 +11,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Repository;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -18,7 +19,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.entity.vegetablesShop;
 
-@Controller
+@Repository
+@Transactional
 @RequestMapping("/")
 public class vegeShop {
 	@Autowired
@@ -32,7 +34,7 @@ public class vegeShop {
 		this.sessionFactory = sessionFactory;
 	}
 	
-	@Transactional
+	
 	@RequestMapping(value = "loadvege", method = RequestMethod.GET)
 	public ModelAndView returnVege(ModelAndView mandv, Model model){
 		Session session = sessionFactory.getCurrentSession();
