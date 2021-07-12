@@ -88,6 +88,11 @@ public class LoginController {
 			}
 			else {
 				httpsession.setAttribute("admin", false);
+				int uid = usrlist.get(0).getUid();
+				httpsession.setAttribute("uid", uid);
+				User usr = session.load(User.class, uid);
+				usr.setFlag(1);
+				session.update(usr);
 			}
 			mandv.setViewName("welcome");
 		}

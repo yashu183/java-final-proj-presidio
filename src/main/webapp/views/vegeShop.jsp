@@ -103,6 +103,9 @@
   	      	out.print("<li class = 'nav-item'>");
   	      	out.print("<a class = 'nav-link' href='/loadsetdata'>"+ "Add Items" +"</a>");
   	      	out.print("</li>");
+			out.print("<li class = 'nav-item'>");
+			out.print("<a class = 'nav-link' href='/userslist'>"+ "Users" +"</a>");
+			out.print("</li>");
   		}
        }
       %>
@@ -182,11 +185,11 @@
 <script>
 function myfun(i, id){
 	//console.log("inside fun...");
-	<%-- <%= System.out.println("Its working")%> --%>
+//<%-- <%= System.out.println("Its working")%> --%>
 	//request.setAttribute("id", id);
-<%-- 	'<%Session["itemid"] = /"' + id + '/";%>';
-	'<%Session["itemid"] = ' + id + ''   --%>
-	<%-- '<%Session["UserName"] = "' + userName + '"; %>'; --%>
+//<%-- 	'<%Session["itemid"] = /"' + id + '/";%>';
+	// '<%Session["itemid"] = ' + id + ''   --%>
+	// <%-- '<%Session["UserName"] = "' + userName + '"; %>'; --%>
 	//console.log(id);
 	const url = '/selectedItems?itemid='+id;
 	console.log(url);

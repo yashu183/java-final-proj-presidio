@@ -22,6 +22,7 @@ import com.entity.User;
 public class LoadProfile {
 	@Autowired
 	SessionFactory sessionfactory;
+
 	public SessionFactory getSessionfactory() {
 		return sessionfactory;
 	}
@@ -29,25 +30,25 @@ public class LoadProfile {
 	public void setSessionfactory(SessionFactory sessionfactory) {
 		this.sessionfactory = sessionfactory;
 	}
-	
+
 	@Transactional
 	@RequestMapping(value = "/loadprofile", method = RequestMethod.GET)
-	public ModelAndView loadProfile(ModelAndView mandv, HttpSession httpsession, HttpServletResponse response) throws IOException {
+	public ModelAndView loadProfile(ModelAndView mandv, HttpSession httpsession, HttpServletResponse response)
+			throws IOException {
 		Session session = sessionfactory.getCurrentSession();
-		
-		 if(httpsession.getAttribute("uid") == null) {
-			 response.sendRedirect("/needLogin"); 
-		 } 
-		 else 
-		 { System.out.println("inisde else....");
-			 int uid = (int)httpsession.getAttribute("uid"); 
-			 Query query = session.createQuery("from User usr where usr.uid = "+uid, User.class); 
-			 User usr = (User)query.list().get(0); 
-			 httpsession.setAttribute("userDetails",usr); 
-		 }
-		
 
-		 mandv.setViewName("profile");
+		if (httpsession.getAttribute("uid") == null) {
+			System.out.println("inisde if.... load profile");
+			response.sendRedirect("/needLogin");
+		} else {
+			System.out.println("inisde else.... load profile");
+			int uid = (int) httpsession.getAttribute("uid");
+			Query query = session.createQuery("from User usr where usr.uid = " + uid, User.class);
+			User usr = (User) query.list().get(0);
+			httpsession.setAttribute("userDetails", usr);
+		}
+
+		mandv.setViewName("profile");
 		return mandv;
 	}
 }

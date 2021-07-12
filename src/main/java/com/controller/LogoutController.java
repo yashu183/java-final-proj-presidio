@@ -36,6 +36,10 @@ public class LogoutController {
 	public ModelAndView doLogout(ModelAndView mandv, HttpSession httpsession, HttpServletRequest request) {
 		System.out.println("inisde logout method....");
 		httpsession = request.getSession();
+		if(httpsession.getAttribute("uid") == null){
+			mandv.setViewName("needLogin");
+			return mandv;
+		}
 		int uid = (int)httpsession.getAttribute("uid");
 		Session session = sessionfactory.getCurrentSession();
 		Query query = session.createQuery("from User where uid = "+"'"+uid+"'", User.class);
