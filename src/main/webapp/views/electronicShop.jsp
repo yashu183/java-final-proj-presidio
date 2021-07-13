@@ -104,6 +104,9 @@
   	      	out.print("<li class = 'nav-item'>");
   	      	out.print("<a class = 'nav-link' href='/loadsetdata'>"+ "Add Items" +"</a>");
   	      	out.print("</li>");
+			out.print("<li class = 'nav-item'>");
+			out.print("<a class = 'nav-link' href='/userslist'>"+ "Users" +"</a>");
+			out.print("</li>");
   		}
        }
       %>
