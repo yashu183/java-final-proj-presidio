@@ -34,6 +34,7 @@ public class UsersList {
     @Transactional
     @RequestMapping(value = "/userslist", method = RequestMethod.GET)
     public ModelAndView requestMethodName(ModelAndView mandv, HttpSession httpsession) {
+        System.out.println("inside userslist direct....");
         Session session = sessionfactory.getCurrentSession();
         Query query = session.createQuery("from User");
         List<User> userslist = query.list();

@@ -153,7 +153,10 @@ img.profile-photo-lg{
           <div class="people-nearby">
     <% 
         HttpSession httpsession1 = request.getSession();
-        List<User> userslist = (List<User>)httpsession1.getAttribute("userslist");
+
+        if(httpsession.getAttribute("uid") != null){
+          int uid = (int)httpsession.getAttribute("uid");
+          List<User> userslist = (List<User>)httpsession1.getAttribute("userslist");
             for(int i = 0; i < userslist.size(); i++){
                 int id = userslist.get(i).getUid();
                 String name = userslist.get(i).getUname();
@@ -179,24 +182,47 @@ img.profile-photo-lg{
                 out.println("</div>");
                 out.println("<div class = 'col-md-3 col-sm-3'>");
                 if(isAdmin == 0){
-                out.println("<button class = 'btn btn-dark pull-right'>Make as Admin</button>");
+                out.println("<button onclick = 'makeAdmin("+id+")' class = 'btn btn-dark pull-right'>Make as Admin</button>");
                 }
                 else{
-                  out.println("<button class = 'btn btn-danger pull-right'>Remove as Admin</button>");
+                  if(uid == i+1){
+                    out.println("<button onclick = 'same("+id+")' class = 'btn btn-danger pull-right'>Remove as Admin</button>");
+                  }
+                  else{
+                  out.println("<button onclick = 'rmvAdmin("+id+")' class = 'btn btn-danger pull-right'>Remove as Admin</button>");
+                  }
                 }
                 out.println("</div>");
                 out.println("</div>");
                 out.println("</div>");
-            }
+              }
+        }
+        
     %>
                 </div>
           </div>
     </div>
   </div>
 </div>
-
-</body>
 <script src="https://kit.fontawesome.com/8e81d008db.js" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+
+<script>
+  function makeAdmin(id) {      
+    const url = '/previliges?uid='+id;
+    fetch(url).then(response => response.json()).then(res => {console.log(res);})
+    alert("Updated successfully. Reload to see the updates");
+  }
+
+  function rmvAdmin(id) {
+    const url = '/previliges?uid='+id;
+    fetch(url).then(response => {console.log(response.json()+"rmvAdmin");})
+    alert("Updated successfully. Reload to see the updates");
+  }
+  function same(id){
+    alert("You cant remove yourself as Admin");
+  }
+</script>
 </html>
     

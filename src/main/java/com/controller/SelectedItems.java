@@ -20,7 +20,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.entity.Items;
-import com.entity.vegetablesShop;
 
 @Controller
 @RequestMapping("/")
@@ -53,7 +52,6 @@ public class SelectedItems {
 			//itemslist.add(item);
 		//}
 		httpsession.setAttribute("selecteditemslist", itemslist);
-//		response.sendRedirect("/loadvege");
-//		return mandv;
+
 	}
 }
