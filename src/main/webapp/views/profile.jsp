@@ -149,7 +149,6 @@
                  <div class="d-flex flex-column align-items-center text-center">
                    <img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="rounded-circle" width="150">
                    <div class="mt-3">
-                     
                      <% if(httpsession.getAttribute("userDetails") != null){
 	                     User usr = (User)httpsession.getAttribute("userDetails");
 	                     String uname = usr.getUname();
@@ -159,7 +158,7 @@
                      	out.println("<p class = 'text-muted font-size-sm'>"+add+"</p>");
                      }
                      %>
-                     <!-- <p class="text-muted font-size-sm">Address Here</p> -->
+                  
                      <button class="btn btn-dark btn-block">Edit Profile</button>
                    </div>
                  </div>

@@ -63,7 +63,7 @@
       </ul> 
             <ul style="float : right;" class="navbar-nav">
         <li class="nav-item" style="float : right;">
-        	<a class="nav-link" href="#"><i style="font-size : 26px;" class="fas fa-user"></i></a>
+        	<a class="nav-link" href="/loadprofile"><i style="font-size : 26px;" class="fas fa-user"></i></a>
         </li>
       </ul>
 	  <form class="d-flex mr-3">
