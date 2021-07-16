@@ -6,57 +6,52 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<body>
-<div class="container">
-<a href="/loadvege">click here to go to vege page</a>
-<%-- <%
-	List<Items> vegelist = (List)request.getAttribute("itemlis");
-	for(int i = 0; i < vegelist.size(); i++){
-		String name = (String)vegelist.get(i).getName();
-		int price = (int)vegelist.get(i).getPrice();
-		String img = (String)vegelist.get(i).getImg();
-		out.println("<div id = 'outer"+i+"' class='card m-4 shadow p-3 mb-5 bg-white rounded' style='width: 30%; border : 1px solid #d3d3d3;'>");
-		out.println("<img class='card-img-top' src="+img+" alt='Card image cap'height=200;>");
-		out.println(" <div class='card-body'>");
-		out.println("<h5 class='card-title'>"+name+"</h5>");
-		out.print("<p style = 'font-size : 20px;' class='card-text'>"+"Price per unit : "+ "<strong>"+price+"</strong>" +"</p>");
-		out.println("<a href='#' id = 'select"+i+"' onclick = 'myfun("+i+")' class='btn btn-primary btn-block' style = 'width : 100%'>Add to cart</a>");
-		out.println("<a href='#' id = 'remove"+i+"' onclick = 'myfun1("+i+")' class='btn btn-danger btn-block' style = 'width : 100%; display : none'>Remove from cart</a>");
-		out.println("</div>");
-		out.println("</div>");
-	} 
-%> --%>
-</div>
-</body>
-<script>
-function myfun(i){
-	var s = "outer"+i;
-	console.log(s);
-	var di = document.getElementById(s);
-	console.log(di);
-	di.style.border = '1px solid #0d6efd';
-	var s1 = "select"+i;
-	var sel = document.getElementById(s1);
-	var s2 = "remove"+i;
-	var del = document.getElementById(s2);
-	sel.style.display = 'none';
-	del.style.display = 'block';
+<title>welcome.page</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css" integrity="sha384-wESLQ85D6gbsF459vf1CiZ2+rr+CsxRY0RpiF1tLlQpDnAgg6rwdsUF1+Ics2bni" crossorigin="anonymous">
+<style>
+	body{
+		width : 100%;
+		height : 100vh;
+		margin : 0px;
+		padding : 0px;
+	}
+
+.container{
+	width : 90%;
+	margin : auto;
 }
 
-function myfun1(i){
-	var s = "outer"+i;
-	console.log(s);
-	var di = document.getElementById(s);
-	console.log(di);
-	di.style.border = '1px solid #d3d3d3';
-	var s1 = "select"+i;
-	var sel = document.getElementById(s1);
-	var s2 = "remove"+i;
-	var del = document.getElementById(s2);
-	sel.style.display = 'block';
-	del.style.display = 'none';
+.txt{
+	margin-top : 8rem;
 }
-</script>
+
+.footer{
+	margin-top : 5rem;
+}
+</style>
+</head>
+<body>
+<div class = "container">
+	<div class = "row">
+		<div class = "col-5 d-flex align-items-center">
+			<div class = "text-center txt">
+				<h3>One stop solution for all your needs...</h3>
+				<p style = "my-3 font-size : 14px;">Welcome to Cartistic. Find all the required veges, fruits, groceries, households, kitchen utensils and electronics</p>
+				<a href = '/loadvege' class = "btn btn-dark">visit vege page <span>></span></a>
+			</div>
+		</div>
+		<div class = "col-7">
+			<img src = "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.dribbble.com%2Fusers%2F2749602%2Fscreenshots%2F7966253%2Fshot-cropped-1572865330028.png&f=1&nofb=1" >
+		</div>
+	</div>
+</div>
+	<div class = "footer w-100 text-center text-muted"">
+		<h5>By YashwanthC</h5>
+		contact me @ cyashu2000@gmail.com
+	</div>
+	<%-- <div class="container">
+		<a href="/loadvege">click here to go to vege page</a>
+	</div> --%>
+</body>
 </html>

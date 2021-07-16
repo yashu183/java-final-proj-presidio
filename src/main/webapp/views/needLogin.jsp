@@ -15,9 +15,10 @@
 			<div class = "text-center">
 				<h3>This Page is Buried in the Sand</h3>
 				<h5 class = 'mt-3'>OOPS!!! It looks like session got expired or you are trying to navigate with out logging in</h5>
-				<a href="/showloginpage" class = "mt-3 btn btn-dark">Login here</a>
+				<a href="/showloginpage" style = "position : relative; padding-right : 3rem;" class = "mt-3 btn btn-dark">Go to login page <i style = "position : absolute; top : 25%; margin-left : 0.7rem; font-size : 20px;" class="fas fa-arrow-right"></i></a>
 			</div>
 		</div>
 	<div>
+	<script src="https://kit.fontawesome.com/8e81d008db.js" crossorigin="anonymous"></script>
 </body>
 </html>
