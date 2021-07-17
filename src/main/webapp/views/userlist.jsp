@@ -83,7 +83,7 @@ img.profile-photo-lg{
 
     <nav style="position : sticky; top : 0; z-index:1;" class="navbar  navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-        <a class="navbar-brand" href="/views/welcome.jsp">E-Commers</a>
+        <a class="navbar-brand" style = "font-family: 'Dancing Script', cursive; font-weight : 600; font-size : 22px;" href="/views/welcome.jsp">Cartistic</a>
         <button class="navbar-toggler" type = "button" data-bs-toggle="collapse" data-bs-target="#navbarText">
           <span class="navbar-toggler-icon"></span>
         </button>
