@@ -20,6 +20,9 @@
 <title>groceries.page</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css" integrity="sha384-wESLQ85D6gbsF459vf1CiZ2+rr+CsxRY0RpiF1tLlQpDnAgg6rwdsUF1+Ics2bni" crossorigin="anonymous">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
 <style>
 	.show{
 		position : absolute;
@@ -57,17 +60,18 @@
 		background-color: #fff;
 		font-size : 18px;
 	}
-/* 	.card-img-top:hover{
-		width : 120%;
-		overflow : hidden;
-	} */
+	.footer{
+	padding-bottom : 2rem;
+	padding-top : 1rem;
+	font-size : 14px;
+}
 </style> 
 </head>
 <body style="background-image : url('https://i2.wp.com/storage.googleapis.com/gweb-uniblog-publish-prod/images/Background.2e16d0ba.fill-1422x800.jpg'); width:100%; height: 100vh; background-position:center; background-size : cover; background-attachment: fixed;">
 
 <nav style="position : sticky; top : 0; z-index:1;" class="navbar  navbar-expand-md navbar-dark bg-dark">
     <div class="container-fluid">
-    <a class="navbar-brand" style = "font-family: 'Dancing Script', cursive; font-weight : 600; font-size : 22px;" href="/views/welcome.jsp">Cartistic</a>
+    <a class="navbar-brand" style = "font-family: 'Dancing Script', cursive; font-weight : 600; font-size : 24px;" href="/views/welcome.jsp">Cartistic</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -175,6 +179,9 @@
 %>
 </div>
 </div>
+	<div class = "footer w-100 text-center text-muted"">
+		<h5>By YashwanthC</h5>
+	</div>
 <script src="https://kit.fontawesome.com/8e81d008db.js" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"></script>

@@ -6,6 +6,12 @@
 <meta charset="ISO-8859-1">
 <title>Register.page</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+<style>
+	.footer{
+	margin-top : 2.5rem;
+	font-size : 14px;
+}
+</style>
 </head>
 <body  style="width : 100%; background-image : url('https://i2.wp.com/storage.googleapis.com/gweb-uniblog-publish-prod/images/Background.2e16d0ba.fill-1422x800.jpg')">
 <div  style="width : 100%">
@@ -43,5 +49,8 @@
 		</form>
 	</div> 
 </div>
+	<div class = "footer w-100 text-center text-muted"">
+		<h5>By YashwanthC</h5>
+	</div>
 </body>
 </html>

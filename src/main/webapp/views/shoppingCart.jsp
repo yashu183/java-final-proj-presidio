@@ -11,6 +11,9 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css" integrity="sha384-wESLQ85D6gbsF459vf1CiZ2+rr+CsxRY0RpiF1tLlQpDnAgg6rwdsUF1+Ics2bni" crossorigin="anonymous">
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
 <style>
 .container{
 	background-color : #fff;
@@ -29,6 +32,11 @@
 .nomargin{
 	margin-top : 2rem;
 	margin-left : 6rem;
+}
+.footer{
+	padding-bottom : 2rem;
+	padding-top : 1rem;
+	font-size : 14px;
 }
 @media screen and (max-width: 600px) {
     table#cart tbody td .form-control{
@@ -173,7 +181,7 @@
 			out.println("<td colspan = '2' class = 'hidden-xs'></td>");
 			//out.println("<td class = 'hidden-xs text-center'><strong>Total")
 			out.println("<td class = 'hidden-xs text-center'><strong id = 'ttl'>Total : "+ttlpr+"/-</strong></td>");
-			out.println("<td><a href = '#' class = 'btn btn-block btn-success'> Checkout <i class = 'fa fa-angle-right'></i></a></td>");
+			out.println("<td><a href = '/loadcheckout' class = 'btn btn-block btn-success'> Checkout <i class = 'fa fa-angle-right'></i></a></td>");
 			out.println("</tr>");
 			out.println("</tfoot>");
 			out.println("</table>");
@@ -198,7 +206,9 @@
 	</tfoot>
 	</table> --%>
 	</div> 
- 
+ 	<div class = "footer w-100 text-center text-muted"">
+		<h5>By YashwanthC</h5>
+	</div>
 <script src="https://kit.fontawesome.com/8e81d008db.js" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"></script>

@@ -9,9 +9,11 @@
 <title>users.page</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css" integrity="sha384-wESLQ85D6gbsF459vf1CiZ2+rr+CsxRY0RpiF1tLlQpDnAgg6rwdsUF1+Ics2bni" crossorigin="anonymous">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
 
 <style>
-
 .container{
   background-color : #f3f3f3;
   margin-top : 3rem;
@@ -74,7 +76,11 @@ img.profile-photo-lg{
   margin-top : 1rem;
   padding-bottom : 0.8rem;
 }
-
+.footer{
+	padding-bottom : 2rem;
+  padding-top : 2rem;
+	font-size : 14px;
+}
 </style>
 
 </head>
@@ -204,6 +210,9 @@ img.profile-photo-lg{
     </div>
   </div>
 </div>
+	<div class = "footer w-100 text-center text-muted"">
+		<h5>By YashwanthC</h5>
+	</div>
 <script src="https://kit.fontawesome.com/8e81d008db.js" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>

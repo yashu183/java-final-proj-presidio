@@ -28,10 +28,6 @@
 	margin : auto;
 }
 
-.txt{
-	margin-top : 8rem;
-}
-
 .footer{
 	margin-top : 2.5rem;
 	font-size : 14px;
@@ -45,14 +41,14 @@
 
 <nav style="position : sticky; top : 0; z-index:1;" class="navbar  navbar-expand-lg navbar-light">
     <div class="container-fluid">
-    <a class="navbar-brand" style = "font-family: 'Dancing Script', cursive; font-weight : 600; font-size : 22px;" href="/views/welcome.jsp">Cartistic</a>
+    <a class="navbar-brand" style = "font-family: 'Dancing Script', cursive; font-weight : 600; font-size : 24px;" href="/views/welcome.jsp">Cartistic</a>
     <button class="navbar-toggler" type = "button" data-bs-toggle="collapse" data-bs-target="#navbarText">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarText">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="#">Vegetables</a>
+          <a class="nav-link" aria-current="page" href="loadvege">Vegetables</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/loadfruits">Fruits</a>
@@ -111,9 +107,10 @@
 	<div class = "row">
 		<div class = "col-5 d-flex align-items-center">
 			<div class = "text-center txt">
+				<h1 style = "font-family: 'Dancing Script', cursive; font-weight : 600; font-size : 78px;">Cartistic</h1>
 				<h3>One stop solution for all your needs...</h3>
 				<p style = "my-3 font-size : 14px;">Welcome to Cartistic. Find all the required veges, fruits, groceries, households, kitchen utensils and electronics</p>
-				<a href = '/loadvege' class = "btn btn-dark">visit vege page <span>></span></a>
+				<a style = "font-size : 18px; position : relative; padding-right : 3rem;" href = '/loadvege' class = "btn btn-dark">visit vege page <span><i style = "position : absolute; top : 25%; margin-left : 0.7rem; font-size : 20px;" class="fas fa-arrow-right"></i></span></a>
 			</div>
 		</div>
 		<div class = "col-7">

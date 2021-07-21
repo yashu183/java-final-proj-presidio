@@ -14,6 +14,9 @@
 <meta charset="ISO-8859-1">
 <title>profile.page</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
 <style>
 	body{
     color: #1a202c;
@@ -71,7 +74,11 @@
 .container{
 	background-color : #f3f3f3;
 }
-	
+	.footer{
+  padding-bottom : 2rem;
+  padding-top : 2rem;
+	font-size : 14px;
+}
 </style>
 </head>
 <body style="background-image : url('https://i2.wp.com/storage.googleapis.com/gweb-uniblog-publish-prod/images/Background.2e16d0ba.fill-1422x800.jpg'); width:100%; background-position:center; background-size : cover; background-attachment: fixed;">
@@ -304,5 +311,8 @@
        </div>
 </div>
 </body>
+	<div class = "footer w-100 text-center text-muted"">
+		<h5>By YashwanthC</h5>
+	</div>
 <script src="https://kit.fontawesome.com/8e81d008db.js" crossorigin="anonymous"></script>
 </html>
