@@ -18,6 +18,8 @@ public  class ItemInv {
     private String itemId;
     @Column(name = "invid")
     private int invId;
+    @Column(name = "qty")
+    private int qty;
     public int getId() {
         return id;
     }
@@ -35,6 +37,12 @@ public  class ItemInv {
     }
     public void setInvId(int invId) {
         this.invId = invId;
+    }
+    public int getQty() {
+        return qty;
+    }
+    public void setQty(int qty) {
+        this.qty = qty;
     }
     
 }

@@ -33,7 +33,7 @@
   <div class="row">
     <div class="col-md-12 order-md-1">
       <h4 class="mb-3">Billing address</h4>
-      <form class="needs-validation" novalidate>
+      <form class="needs-validation" action = "checkout" commandName = "checkoutBean" validate>
         <div class="row">
           <div class="col-md-6 mb-3">
             <label for="firstName">First name</label>
@@ -164,7 +164,11 @@ function fun(e){
   const country = document.getElementById("country").value;
   const state = document.getElementById("state").value;
   const zip = document.getElementById("zip").value;
-  console.log(fname + lname + uname + email + address + country + state + zip);
+  const shipaddress = document.getElementById("shipaddress").value;
+  const shipcountry = document.getElementById("shipcountry").value;
+  const shipstate = document.getElementById("shipstate").value;
+  const shipzip = document.getElementById("shipzip").value;
+  console.log(fname + lname + uname + email + address + country + state + zip + shipaddress + shipcountry + shipstate + shipzip);
 }
 function fill(){
   const address = document.getElementById("address").value;

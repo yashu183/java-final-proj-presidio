@@ -26,7 +26,7 @@ public class LoadCheckout {
     }
     
     @Transactional
-    @RequestMapping(value="loadcheckout", method=RequestMethod.GET)
+    @RequestMapping(value="/loadcheckout", method=RequestMethod.GET)
     public ModelAndView requestMethodName(ModelAndView mandv) {
         mandv.setViewName("checkout");
         return mandv;

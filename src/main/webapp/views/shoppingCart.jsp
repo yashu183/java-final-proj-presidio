@@ -157,16 +157,16 @@
 				out.println("<tr>");
 				out.println("<td data-th='Product'>");
 				out.println("<div class='row'>");
+				out.println("<div class = 'd-none hidden'>"+item.getId()+"</div>")
 				out.println("<div class = 'col-sm-2 hidden-xs'><img src='"+item.getImg()+"' width = '100' height = '100' class = 'img-responsive'/></div>");
 				out.println("<div class = 'col-sm-10'>");
 				out.println("<h4 class = 'nomargin'>"+item.getName()+"</h4>");
-				/* out.println("<p>"+itemlis.get(i).getDes()+"</p>"); */
 				out.println("</div>");
 				out.println("</div>");
 				out.println("</td>");
 				out.println("<td class = 'itmprice' data-th = 'Price'>"+item.getPrice()+"/-</td>");
 				out.println("<td data-th = 'Quantity'>");
-				out.println("<input onclick = 'fun()' type = 'number' class = 'form-control text-center' min='1' value = '1'>");
+				out.println("<input onclick = 'fun()' type = 'number' class = 'form-control text-center qty' min='1' value = '1'>");
 				out.println("</td>");
 				out.println("<td data-th = 'Subtotal' class = 'text-center subttl'>"+item.getPrice()+"/-</td>");
 				out.println("<td class = 'actions' data-th = ''>");
@@ -179,9 +179,8 @@
 			out.println("<tr>");
 			out.println("<td><a href='#' class = 'btn btn-warning'><i class = 'fa fa-angle-left'></i> Continue Shopping</a></td>");
 			out.println("<td colspan = '2' class = 'hidden-xs'></td>");
-			//out.println("<td class = 'hidden-xs text-center'><strong>Total")
 			out.println("<td class = 'hidden-xs text-center'><strong id = 'ttl'>Total : "+ttlpr+"/-</strong></td>");
-			out.println("<td><a href = '/loadcheckout' class = 'btn btn-block btn-success'> Checkout <i class = 'fa fa-angle-right'></i></a></td>");
+			out.println("<td><a href = '/loadcheckout' onclick = 'onSubmit()' class = 'btn btn-block btn-success'> Checkout <i class = 'fa fa-angle-right'></i></a></td>");
 			out.println("</tr>");
 			out.println("</tfoot>");
 			out.println("</table>");
@@ -194,17 +193,7 @@
 		out.println("your cart is empty");
 	}
 %>
-<%-- 	</tbody>
-		<tfoot>
-		<tr>
-			<td><a href="#" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
-			<td colspan="2" class="hidden-xs"></td>
-			<%= out.println("<td class = 'hidden-xs text-center'><strong>Total"+ttlpr+"/-</strong></td>") %>
-			<td class="hidden-xs text-center"><strong>Total</strong></td>
-			<td><a href="#" class="btn btn-success btn-block">Checkout <i class="fa fa-angle-right"></i></a></td>
-		</tr>
-	</tfoot>
-	</table> --%>
+
 	</div> 
  	<div class = "footer w-100 text-center text-muted"">
 		<h5>By YashwanthC</h5>
@@ -224,8 +213,6 @@ function fun(){
 	const ip = document.getElementsByTagName("input");
 	const st = document.getElementsByClassName("subttl");
 	const pr = document.getElementsByClassName("itmprice");
-	//console.log(ip);
-	//ip.forEach(x => console.log(x.value));
 	console.log(ip,st,pr);
 	for(var i = 0; i < ip.length-1; i++){
 		console.log(ip[i].value);
@@ -236,17 +223,31 @@ function fun(){
 		var pridx = parseInt(pr[i].innerHTML.slice(0,st[i].innerHTML.length-2));
 		st[i].innerHTML = ipidx*pridx+"/-";
 	}
-	//6 - length-2
 	var ttl = document.getElementById("ttl");
-	//console.log(ttl.innerHTML);
-	//console.log(ttl.innerHTML.slice(6, ttl.innerHTML.length-2));
 	var ttlval = parseInt(ttl.innerHTML.slice(6, ttl.innerHTML.length-2));
-	//console.log(ttlval);
 	var temp = 0;
 	for(var i = 0; i < st.length; i++){
 		temp += parseInt(st[i].innerHTML.slice(0,st[i].innerHTML.length-2));
 	}
 	ttl.innerHTML = "Total "+temp+"/-";
+}
+function onSubmit(){
+	var ttl = document.getElementById("ttl");
+	var ttlval = parseInt(ttl.innerHTML.slice(6, ttl.innerHTML.length-2));
+	var qtys = document.getElementsByClassName('qty');
+	var ids = document.getElementsByClassName('hidden').innerHTML;
+	const map = new Map();
+	for(var i = 0; i < ids.length-1; i++){
+		map.set(ids[i], qtys[i]);
+	}
+	const url = '/toStoreQty?itemid='+ttlval;
+	console.log(url);
+	//fetch(url).then(res => res.json()).then(sam => {console.log(sam);})
+	ajax({
+    type: "POST",
+    url: url,
+    data: map,
+});
 }
 </script>
 
